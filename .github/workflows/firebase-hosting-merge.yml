@@ -12,11 +12,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-      - run: |
+      - name: Ng Build
+        run: |
           cd ./frontend
           npm install
           npm run build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Firebase deploy
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MOUKAIL_E5985 }}'
