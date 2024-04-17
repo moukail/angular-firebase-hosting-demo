@@ -1,19 +1,13 @@
 version: 1
 frontend:
-  buildPath: /frontend/public # Run install and build from the monorepo project root
+  buildPath: /frontend/public
   phases:
-    # IMPORTANT - Please verify your build commands
-    #preBuild:
-    #  commands:
-    #    - npm install
-    #    - npm run build
     build:
       commands:
         - npm install
         - npm run build
 
   artifacts:
-    # IMPORTANT - Please verify your build output directory
     baseDirectory: /
     files:
       - '**/*'
